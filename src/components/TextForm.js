@@ -37,14 +37,14 @@ export default function TextForm(props) {
       </div>
       <button className='btn btn-primary my-3 mx-2' onClick={handleUpClick}>Convert To Upercase</button>
       <button className='btn btn-primary my-3 mx-2' onClick={handleLoClick}>Convert To Lowercase</button>
-      <button className='btn btn-primary my-3 mx-2' onClick={handleClrClick}>Clear</button>
+      <button className='btn btn-danger my-3 mx-2' onClick={handleClrClick}>Clear</button>
     </div>
 
     <div className='my-3'>
       <h2>Your Text Summery</h2>
-      <p>{text.split(" ").length-1} word and {text.length} Character</p>
-      <p>{0.008 * text.split(" ").length}  Minutes to Read</p>
-      <h3>Preview</h3>
+      <p><b>{text.split(" ").length-1}</b> Word <b>{text.length}</b> Character</p>
+      <p><b>{0.008 * text.split(" ").length}</b> Minutes to Read</p>
+      <h3>Preview:-</h3>
       <p>{text}</p>
     </div>
     </>
