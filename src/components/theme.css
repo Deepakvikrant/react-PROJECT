@@ -1,0 +1,14 @@
+#btntheme {
+    width:25px !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    height: 25px !important;
+    text-align: center;
+    padding: 0px;
+    font-size:18px;
+    border-end-end-radius: 25px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+
+    }
