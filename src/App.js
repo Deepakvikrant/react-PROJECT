@@ -8,39 +8,42 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link,
-  Outlet,
 } from "react-router-dom";
 
 
  
 function App() {
   const [mode, setMode] = useState('light'); // Whether dark mode is enabled or not
-  const [alert, setAlert] = useState(null)
+  const [alert, setAlert] = useState(null);
 
-  const showAlert = (message,type) => {
-    setAlert({
-        msg:message,
-        Type:type
-    })
+  const showAlert = (message, type)=>{
+      setAlert({
+        msg: message,
+        type: type
+      })
+      setTimeout(() => {
+          setAlert(null);
+      }, 1500);
   }
 
-  const toggleMode = () => {
-    if (mode === 'light') {
+  const toggleMode = ()=>{
+    if(mode === 'light'){
       setMode('dark');
-      document.body.style.backgroundColor = 'grey';
-      //showAlert("Dark mode has been enable", "success")
-      // setInterval(()=> {
-      //   document.title= 'TexT_ConvertoR is Amazing'},
-      //   1200);
-      // setInterval(()=> {
-      //   document.title= ' install TexT_ConvertoR '},
-      //   2200);
+      document.body.style.backgroundColor = '#042743';
+      showAlert("Dark mode has been enabled", "success");
+      document.title = 'TextUtils - Dark Mode';
+      // setInterval(() => {
+      //   document.title = 'TextUtils is Amazing Mode';
+      // }, 2000);
+      // setInterval(() => {
+      //   document.title = 'Install TextUtils Now';
+      // }, 1500);
     }
-    else {
+    else{
       setMode('light');
       document.body.style.backgroundColor = 'white';
-      //showAlert("Light mode has been enable", "success")
+      showAlert("Light mode has been enabled", "success");
+      document.title = 'TextUtils - Light Mode';
     }
   }
 
