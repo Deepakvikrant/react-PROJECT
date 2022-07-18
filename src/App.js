@@ -4,6 +4,13 @@ import TextForm from './components/TextForm';
 import React, { useState } from 'react';
 import About from './components/About';
 import Alert from './components/Alert';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  Outlet,
+} from "react-router-dom";
 
 
  
@@ -62,13 +69,19 @@ function App() {
     <>
     {/* <Navbar title="TextUtils" aboutText="About TextUtils" /> */}
     {/* <Navbar/> */}
-    <Navbar title="TexT_ConvertoR" mode={mode} toggleModeLight={toggleModeLight} toggleMode={toggleMode} toggleModeBlue={toggleModeBlue} toggleModeDark={toggleModeDark} />
+    <Router>
+
+        <Navbar title="Text_ConvertoR" mode={mode} toggleMode={toggleMode} toggleModeBlue={toggleModeBlue} toggleModeDark={toggleModeDark} toggleModeLight={toggleModeLight} />
+        <Alert alert={alert}/>
     
-    <Alert alert={alert}/>
+      <Routes>
+        {/* Always use "exact" component for exact match */}
+        <Route exact path="about" element ={<About mode={mode}/>} />
+        <Route ecact path="/" element={<TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />}/>
+        <Route exact path ="" />
 
-    <TextForm showAlert={showAlert} heading="Enter the text to Analyze below" mode={mode}/>
-
-    <About/>
+      </Routes>
+    </Router>
 
     </> 
   );
