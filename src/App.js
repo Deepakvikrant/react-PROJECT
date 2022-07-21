@@ -30,7 +30,6 @@ function App() {
     if(mode === 'light'){
       setMode('dark');
       document.body.style.backgroundColor = '#042743';
-      showAlert("Dark mode has been enabled", "success");
       document.title = 'TextUtils - Dark Mode';
       // setInterval(() => {
       //   document.title = 'TextUtils is Amazing Mode';
@@ -42,7 +41,6 @@ function App() {
     else{
       setMode('light');
       document.body.style.backgroundColor = 'white';
-      showAlert("Light mode has been enabled", "success");
       document.title = 'TextUtils - Light Mode';
     }
   }
@@ -76,12 +74,12 @@ function App() {
 
         <Navbar title="Text_ConvertoR" mode={mode} toggleMode={toggleMode} toggleModeBlue={toggleModeBlue} toggleModeDark={toggleModeDark} toggleModeLight={toggleModeLight} />
         <Alert alert={alert}/>
+        <about mode={mode}/>
     
       <Routes>
         {/* Always use "exact" component for exact match */}
-        <Route exact path="about" element ={<About mode={mode}/>} />
+        <Route exact path="/about" element ={<About mode={mode}/>} />
         <Route ecact path="/" element={<TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />}/>
-        <Route exact path ="" />
 
       </Routes>
     </Router>
