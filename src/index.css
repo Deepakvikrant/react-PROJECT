@@ -12,3 +12,7 @@ code {
     monospace;
 } */
 
+.accordion-button::after{
+  filter: invert(black);
+}
+

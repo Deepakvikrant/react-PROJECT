@@ -15,7 +15,7 @@ export default function Navbar(props) {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+                            <Link className="nav-link" aria-current="page" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" aria-current="page" to="/about">{props.aboutText}</Link>
@@ -31,11 +31,11 @@ export default function Navbar(props) {
                         <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable DarkMode</label>
                     </div>
 
-                    <button type="button" class="btn btn-primary btn-circular-xl mx-1 my-1" id='btntheme' onClick={props.toggleModeBlue}></button>
+                    <button type="button" className="btn btn-primary btn-circular-xl mx-1 my-1" id='btntheme' onClick={props.toggleModeBlue}></button>
 
-                    <button type="button" class="btn btn-dark btn-circular-xl mx-1 my-1" id='btntheme' onClick={props.toggleModeDark}></button>
+                    <button type="button" className="btn btn-dark btn-circular-xl mx-1 my-1" id='btntheme' onClick={props.toggleModeDark}></button>
 
-                    <button type="button" class="btn btn-light btn-circular-xl mx-1 my-1" id='btntheme' onClick={props.toggleModeLight}></button>
+                    <button type="button" className="btn btn-light btn-circular-xl mx-1 my-1" id='btntheme' onClick={props.toggleModeLight}></button>
 
                 </div>
             </div>
